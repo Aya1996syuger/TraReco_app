@@ -1,0 +1,71 @@
+
+<div class = "text_font">
+    <div class="main">
+        <div class="headding">
+            <h2><i class="fas fa-marker"></i>リスト作成</h2>
+        </div>
+        <%= form_with model: @list, url:lists_path, local:true do |f| %>
+     
+            <!--都道府県選択-->
+            <table>
+                <tr>
+                    <th><%= f.label :都道府県選択 %></th>
+                    <td><%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: ""} %></td></br>
+                </tr>
+                    <!--ジャンル選択ボックス-->
+                <tr>
+                    <th><%= f.label :ジャンル選択 %></th>
+                    <td><%= f.collection_select(:genre_id, @genres, :id, :name, include_blank: "選択してください") %></td>
+                </tr>
+                    <!--行きたい所名称-->
+                <tr>
+                    <th><%= f.label :行きたい場所 %></th>
+                    <td><%= f.text_field :spot_name ,placeholder: "東京スカイツリー" ,size: "80x80"%></td>
+                </tr>
+                <tr>
+                    <!--行きたい所名称-->
+                    <th><%= f.label :住所 %></th>
+                    <td><%= f.text_field :address ,placeholder: "東京都墨田区押上1-1-2",size: "80x80"%></td>
+                </tr>
+            </table>
+            <%= f.submit '作成' %>
+        <% end %>
+    
+        <!--リスト一覧-->
+        <div class="headding">
+            <h2><i class="fas fa-list"></i>リスト一覧</h2>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>チェック</th>
+                    <th></th>
+                    <th>都道府県</th>
+                    <th>ジャンル</th>
+                    <th>行きたい所</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @lists.each do |list| %>
+                    <tr>
+                        <%= form_with model: list, local:true, method: :patch do |f| %>
+                            <td><%= f.check_box :check_box %></td>
+                            <td><%= f.submit '更新'%>
+                        <% end %>
+                        <td><%= list.prefecture.name %></td>
+                        <td><%= list.genre.name%></td>
+                        <td><%= list.spot_name %></td>
+                        <td><%= link_to "MAP", lists_map_path(list), class: "btn btn-danger" %></td>
+                        <td><%= link_to "削除する", list_path(list), class: "btn btn-danger" , method: :delete %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+        
+        <div class="pagenation">
+            <%= paginate @lists %>
+        </div>
+    </div>
+</div>
+

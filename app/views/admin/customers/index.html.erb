@@ -1,0 +1,28 @@
+<div class="text_font">
+    <h2><i class="far fa-address-card"></i>会員情報</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>会員ID</th>
+                <th>氏名</th>
+                <th>メールアドレス</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <% @customers.each do |customer| %>
+            　　<tr>
+                    <td><%= customer.id %></td>
+                    <td>
+                        <%= link_to admin_customer_path(customer.id) ,class:"name" do%>
+                            <%= customer.name %>
+                        <% end %>
+                    </td>
+                    <td><%= customer.email %></td>
+                
+            <% end %>
+            
+            
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,38 @@
+<div class = "text_font">
+ <div class="main">
+  <%= form_with model: @genre, url:genres_path, local:true do |f| %>
+  
+    <div class="headding">
+     <h2>ジャンル</h2>
+    </div>
+    <%= f.text_field :name %>
+    <%= f.submit '新規登録', class: 'btn btn-success' %>
+  <% end %>
+  
+   <div class="col-md-6">
+    <table class="table">
+     <thead>
+       <tr>
+        <th>ジャンル</th>
+        <th></th>
+        <th colspan="2"></th>
+       </tr>
+     </thead>
+      <tbody>
+       <% @genres.each do |genre| %>
+      　 <tr>
+       　 <td>
+  
+          <%= genre.name %>
+       　 </td>
+       　 <td>
+       　 
+          <%= link_to "編集する",edit_genre_path(genre), class:"btn btn-success"%>
+       　 </td>
+       </tr>
+       <% end %>
+      </tbody>
+    </table>
+   </div>
+  </div>
+</div>

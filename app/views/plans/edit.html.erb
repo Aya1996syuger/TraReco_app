@@ -1,0 +1,23 @@
+<div class="text_font">
+     <div class="main">
+        <div class = "headding">
+            <h2>計画表紙編集</h2>
+        </div>
+        <%= form_with model:@plan,url:plan_path(@plan), local:true do |f| %>
+            <div class="form-group">
+                <label for="name">タイトル</label>
+                <%= f.text_field :plan_title %>
+    
+                <label for="name"></label>日付</label>
+                <%= f.date_field :date %>
+            </div>
+            
+            
+            <%= f.submit '更新', class: "btn btn-danger" %>
+            
+            <div class="form-group">
+                    <%= link_to "削除する", plan_path(@plan), class: "btn btn-danger" , method: :delete %></td>
+                </div>
+        <% end %>
+    </div>
+</div>

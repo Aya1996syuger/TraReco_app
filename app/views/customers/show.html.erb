@@ -1,0 +1,33 @@
+<div class="text_font">
+ <div class="main">
+  <div class="mypage">
+   <div class="headding">
+    <h2><i class="far fa-address-card"></i>マイページ</h2>
+   </div>
+    
+   <%= link_to "編集する",edit_customer_path(@customer), class:"btn btn-outline-success"%>
+   
+   <table class="table table-bordered">
+  
+     <tr>
+      <th>氏名</th>
+      <td><%= @customer.name %></td>
+     </tr>
+     <tr>
+      <th>誕生日</th>
+      <td><%= @customer.birthday.strftime("%Y年%m月%d日") %></td>
+     </tr>
+     <th>出身地</th>
+      <td><%= @customer.birthplace %></td>
+     <tr>
+      <th>メールアドレス</th>
+      <td><%= @customer.email %></td>
+     </tr>
+     
+     <th>性別</th>
+      <td><%= @customer.gender %></td>
+     </tr>
+   </table>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,109 @@
+
+<html lang="ja">
+  
+  <head>
+    <%= csrf_meta_tag %>
+    <title>TrarecoApp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <!--画面スライダー-->
+    <!--<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.scss"/>-->
+    <!--<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.scss"/>-->
+    <!--<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
+    
+    <%= include_gon %>
+    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+  </head>
+  <body>
+  <header>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.jpg" />
+  
+      <div class="container">
+      
+        <nav class="navbar navbar-expand-lg navbar-dark">
+        <script src="https://kit.fontawesome.com/e9525941b3.js" crossorigin="anonymous"></script>
+        </div>
+        
+        <!--ナビゲーションバー-->
+        <div class='fixed-top'>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <% if customer_signed_in? %>
+              <div class="navitem">
+                <%= image_tag 'logo.jpg',size: "170x70"%>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Home", root_path ,class: 'btn btn-outline-info'%>
+                </button>
+                
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Album",  itineraries_path ,class: 'btn btn-outline-info'%>
+                </button>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "My List", lists_path ,class: 'btn btn-outline-info'%>
+                </button>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Genre",genres_path, class:'btn btn-outline-info'%>
+                </button>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Record",records_path, class: 'btn btn-outline-info'%>
+                </button>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Plan",plans_path, class: 'btn btn-outline-info'%>
+                </button>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Mypage", customer_path(current_customer.id) ,class: 'btn btn-outline-info'%>
+                </button>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Logout", destroy_customer_session_path, method: :delete,class: 'btn btn-outline-info' %>
+                </button>
+                </div>
+                
+                <div class= "welcome">
+                  ようこそ！<%= current_customer.name %>さん
+                </div>
+                
+                
+              <% elsif admin_signed_in? %>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Home", root_path ,class: 'btn btn-outline-info'%>
+                </button>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Logout", destroy_admin_session_path, method: :delete,class: 'btn btn-outline-info' %>
+                </button>
+                
+              
+              <% else %>
+                <div class="navitem">
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Share", root_path,class: 'btn btn-outline-info' %>
+                </button>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Signup" , new_customer_registration_path,class: 'btn btn-outline-info' %>
+                </button>
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Login", new_customer_session_path,class: 'btn btn-outline-info' %>
+                </button>
+              <% end %>
+            </div>
+           </nav>
+        </div>
+  
+  </header>
+  
+  
+  <%= yield %>
+
+  
+  <footer>
+  2022  Record Travel
+  </footer>
+  
+  
+  </body>
+</html>

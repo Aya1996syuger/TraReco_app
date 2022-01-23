@@ -1,0 +1,41 @@
+<div class="text_font">
+ <div class="main">
+  <h2><i class="far fa-calendar-alt"></i>タイムスケジュール</h2>
+ 
+ 
+  <div class = "itinerary_contents">
+   <%= link_to "タイムスケジュール作成",new_plan_schedule_path, class:"btn btn-success"%></br>
+  </div>
+  
+  <table class="table table-hover">
+   <thead>
+    <th>時間</th>
+    <th>ジャンル</th>
+    <th>項目</th>
+    <th>場所</th>
+    <th>予算</th>
+    <th>メモ</th>
+    <th></th>
+    <th></th>
+   </thead>
+
+   <% @schedules.each do |schedule| %>
+    <tbody>
+     <td><%= schedule.start_time.strftime("%H:%M")   %> ~ <%= schedule.finish_time.strftime("%H:%M") %></td>
+     <td><%= schedule.genre.name %></td>
+     <td><%= schedule.plan_title %></td>
+     <td><%= schedule.address %></td>
+     <td><%= schedule.budget %></td>
+     <td><%= schedule.memo %></td>
+     <td><%= link_to "編集する",edit_plan_schedule_path(schedule.plan_id,schedule.id), class:"btn btn-success"%></td>
+     <td><%= link_to "削除",plan_schedule_path(schedule.plan_id,schedule.id), method: :delete, class:"btn btn-success"%></td>
+    </tbody>
+   <% end %>
+  
+  </table>
+  
+  <div class="pagenation">
+     <%= paginate @schedules %>
+  </div>
+ </div>
+</div>

@@ -1,0 +1,26 @@
+編集
+
+<%= form_with model:@itinerary,url:itinerary_path(@itinerary), local:true do |f| %>
+    <div class="form-group">
+        <label for="name">カバー写真</label>
+        <%= f.file_field :image %>
+    
+    <div class="form-group">
+        <label for="name">タイトル</label>
+        <%= f.text_field :itinerary_name %>
+    </div>
+        <label for="name"></label>開始日</label>
+        <%= f.date_field :start_date %>
+    </div>
+    <div class="form-group">
+        <label for="name">終了日</label>
+        <%= f.date_field :finish_date%>
+    </div>
+    
+    <%= f.submit '更新' %>
+    
+    <div class="form-group">
+            <%= link_to "削除する", itinerary_path(@itinerary), class: "btn btn-danger" , method: :delete %></td>
+        </div>
+<% end %>
+

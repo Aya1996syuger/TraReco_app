@@ -1,0 +1,33 @@
+// Place all the styles related to the itineraries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.itinerary{
+  margin: 5px;
+  padding: 10px;
+}
+
+.img_content{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.example {/*親div*/
+  position: relative;
+  }
+
+.example p {
+  position: absolute;
+  top: 0;/*画像の左上に配置*/
+  left: 0;
+  margin: 0; /*余計な隙間を除く*/
+  color: white;/*文字を白に*/
+  background: skyblue;/*背景色*/
+  font-size: 15px;
+  line-height: 1;/*行高は1に*/
+  padding: 5px 10px;/*文字周りの余白*/
+
+
+  }
+

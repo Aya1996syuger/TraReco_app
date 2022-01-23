@@ -1,0 +1,49 @@
+<div class = "text_font">
+ <div class="main">
+  <h2><i class="fas fa-user-edit"></i>マイページ編集画面</h2>
+ 
+  <%= form_with model:@customer,url:customer_path(@customer), local:true do |f| %>
+ 
+  <table class="table table-borderless">
+   <tr>
+    <th>
+     <label for="name">氏名</label>
+     <label for="name"></label>
+    </th>
+    <td>
+     <%= f.text_field :name %>
+    </td>
+   </tr>
+   <tr>
+    <th>
+     <label for="birthday">誕生日</label></br>
+    </th>
+    <td>
+     <%= f.text_field :birthday %>
+    </td>
+   </tr>
+   <tr>
+    <th>
+     <label for="birthplace">出身地</label></br>
+    </th>
+    <td>
+     <%= f.text_field :birthplace %>
+    </td>
+   </tr>
+   <tr>
+    <th>
+     <label for="email">メールアドレス</label></br>
+    </th>
+    <td>
+     <%= f.text_field :email %>
+    </td>
+   </tr>
+  </table>
+  
+   <div class="form-group">
+    <%= f.submit '変更内容保存', class: "btn btn-success" %>
+   </div>
+  <% end %>
+ </div>
+</div>
+

@@ -1,0 +1,28 @@
+<div class="text_font">
+    <div class="main">
+        <!--検索-->
+        <%= search_form_for @q, url:shares_path do |f| %>
+            <i class="fas fa-search"><%= f.search_field :title_cont,placeholder: "旅行先...",size: "30x30" %></i>
+            <%= f.submit "検索" ,class:"fas fa-search"%>
+        <% end %>
+        
+        <div class="headding">
+          <h2><i class="fas fa-book-open"></i>みんなの思い出</h2>
+        </div>
+        <div class="cards">
+            <% @shares.each do |share| %>
+                <div class="card">
+                    <% share.post_files.first(1).each do |image| %>
+                        <%= link_to share_path(share) do%>
+                            <%= attachment_image_tag image, :image, :fill, 200, 200 %></br>
+                            <h6 class="card-title"><%= share.title %></h5>
+                        <% end %>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+        <div class="pagenation">
+            <%= paginate @shares %>
+        </div>
+    </div>
+</div>

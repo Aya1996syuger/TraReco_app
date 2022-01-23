@@ -1,0 +1,28 @@
+<div class = "text_font">
+    <div class="main">
+        <div class="record_title">
+            <h2>アルバム作成</h2>
+        </div>
+
+
+        <!-- しおり作成 -->
+        <%= form_with model:@itinerary, local:true do |f| %>
+    
+        
+            <%= f.label :しおり名 %>
+            <%= f.text_field :itinerary_name, placeholder: "初めての！東京旅行",size: "10x10" %></br>
+            
+            <%= f.label :開始日%>
+            <%= f.date_field :start_date %></br>
+            
+            <%= f.label :終了日%>
+            <%= f.date_field :finish_date %></br>
+            
+            <%= f.attachment_field :image %></br>
+            
+            
+            <%= f.submit '作成' %>
+
+        <% end %>
+    </div>
+</div>

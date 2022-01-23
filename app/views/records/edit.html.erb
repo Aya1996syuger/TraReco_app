@@ -1,0 +1,68 @@
+<div class = "text_font">
+<h3><%= @record.title %>の編集</h3>
+
+<%= form_with model:@record,url:record_path(@record), local:true do |f| %>
+
+<table class="table table-borderless">
+ <tr>
+  <th>
+   <label for="name">タイトル</label>
+   <label for="name"></label>
+  </th>
+  <td>
+   <%= f.text_field :title %>
+  </td>
+ </tr>
+ 
+ <tr>
+  <th>
+   <label for="birthplace">ジャンル</label></br>
+  </th>
+  <td>
+   <%= f.collection_select(:genre_id, @genres, :id, :name, include_blank: true) %>
+ </tr>
+ 
+ <tr>
+  <th>
+   <label for="email">訪問日</label></br>
+  </th>
+  <td>
+   <%= f.date_field :record_date %>
+  </td>
+ </tr>
+ 
+ <tr>
+  <th>
+   <label for="email">値段</label></br>
+  </th>
+  <td>
+    <%= f.text_field :price %>
+  </td>
+ </tr>
+ 
+ <tr>
+  <th>
+   <label for="email">メンバー</label></br>
+  </th>
+  <td>
+   <%= f.text_field :member %>
+  </td>
+ </tr>
+ 
+ <tr>
+  <th>
+   <label for="email">感想</label></br>
+  </th>
+  <td>
+   <%= f.text_area :body,size: "100x10" %></br>
+  </td>
+ </tr>
+</table>
+
+ <div class="form-group">
+  <%= f.submit '変更内容保存', class: "btn btn-success" %>
+  </div>
+<% end %>
+
+<%= link_to "削除する", record_path(@record), class: "btn btn-danger" , method: :delete %></td>
+</div>

@@ -1,0 +1,55 @@
+<div class = "text_font">
+<!--記録の複数写真アップロード-->
+    <div class="main">
+        <div class="main-visual-content">
+            <div class="shares_img">
+                <% @record.post_files.each do |image| %>
+                    <div class="share_img">
+                        <% if @record.post_files.present? %>
+                            <%= attachment_image_tag image, :image, :fill, 400, 400 %></br>
+                        <% else %>
+                            <%= image_tag 'no_image.jpg', size: '400x400' %>
+                        <% end %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="visit">
+            訪問日<%= @record.record_date.strftime('%Y/%m/%d') %></br>
+            <h4><i class="far fa-hand-point-down"></i><%= @record.title %></h4>
+        </div>
+        
+        <div class="thought">
+            <%=safe_join(@record.body.split("\n"),tag(:br))%>
+             <table class="info">
+                 <th><h5><i class="far fa-question-circle">Infomation</i></h5></th>
+                
+                <tr>
+                    <th>都道府県</th>
+                    <td><%= @record.prefecture.name %></td>
+                </tr>
+                <tr>
+                    <th>ジャンル</th>
+                    <td><%= @record.genre.name %></td>
+                </tr>
+
+                <tr>
+                    <th>予算</th>
+                    <td>¥<%= @record.price %></td>
+                </tr>
+                <tr>
+                    <th>住所</th>
+                    <td><%= @record.address %></td>
+                </tr>
+                <tr>
+                    <th>メンバー</th>
+                    <td><%= @record.member %></td>
+                </tr>
+            </table>
+            <%= link_to "編集する", edit_record_path(@record), class: "btn btn-danger" %>
+        </div>
+        
+    </div>
+</div>
+

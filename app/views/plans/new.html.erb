@@ -1,0 +1,19 @@
+<div class="text_font">
+<h2><i class="fas fa-list"></i>旅行計画タイトル作成</h2>
+
+
+<%= form_with model:@plan, local:true do |f| %>
+ <%= f.label :タイトル %>
+ <%= f.text_field :plan_title %></br>
+ 
+ <%= f.label :日付%>
+ <%= f.date_field :date %></br>
+ 
+ 
+ 
+ 
+ 
+ 
+ <%= f.submit '作成' %>
+<% end %>
+</div>

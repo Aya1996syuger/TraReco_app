@@ -1,0 +1,43 @@
+<div class = "text_font">
+    <div class="main">
+        <div class="record_title">
+            <h2><%= @itinerary.itinerary_name %>のアルバム</h2>
+    
+    
+            <%= link_to "アルバム編集",edit_itinerary_path, class:"btn btn-success"%></br>
+            <div class="itinerary">
+                <div class="example">
+                    <%= attachment_image_tag @itinerary, :image, :fill, 180, 160 %></br>
+                    <p>
+                        <%= @itinerary.itinerary_name %><br>
+                        <%= @itinerary.start_date.strftime('%Y/%m/%d') %> ~ <%= @itinerary.finish_date.strftime('%Y/%m/%d') %></br>
+                    </p>
+                </div>
+            </div>
+            
+         
+            <div class="headding">
+                <h3><%= @itinerary.itinerary_name %>の記録一覧</h>
+            </div>
+            
+            <%= link_to "記録作成",new_record_path, class:"btn btn-success"%></br>
+            
+            <% @records.each do |record| %>
+                <div class= "itinerary">   
+                    <% record.post_files.each do |image| %>
+                            <%= link_to record_path(record) ,class:"name" do%>
+                                <%= attachment_image_tag image, :image, :fill, 200, 200 %></br>
+                                <%= record.record_date.strftime('%Y/%m/%d') %></br>
+                                <%= record.title %>
+                        
+                            <% end %>
+                    <% end %>
+                </div>
+            <% end %>
+            
+            <div class="pagenation">
+            <%= paginate @records %>
+            </div>
+        </div>
+    </div>  
+</div>

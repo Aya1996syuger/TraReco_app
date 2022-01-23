@@ -1,0 +1,32 @@
+<div class="text_font">
+ <div class="main">
+  <div class="headding">
+   <h2><i class="fas fa-images"></i>アルバム一覧</h2>
+   </div>
+
+   <%= link_to "アルバム作成",new_itinerary_path, class:"btn btn-success"%></br>
+ 
+ 
+   <% @itineraries.each do |itinerary| %>
+    <div class="itinerary">
+     <%= link_to itinerary_path(itinerary) do%>
+      <div class="example">
+       <%= attachment_image_tag itinerary, :image, :fill, 200, 200 %></br>
+       <p>
+        <%= itinerary.itinerary_name %></br>
+        <%= itinerary.start_date.strftime('%Y/%m/%d') %> ~ <%= itinerary.finish_date.strftime('%Y/%m/%d') %></br>
+       </p>
+      </div>
+     <% end %>
+    </div>  
+   <% end %>
+ 
+ 
+  
+   <div class="pagenation">
+    <%= paginate @itineraries %>
+   </div>
+  </div>
+ </div>
+ 
+</div>
