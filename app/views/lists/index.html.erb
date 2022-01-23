@@ -7,7 +7,7 @@
         <%= form_with model: @list, url:lists_path, local:true do |f| %>
      
             <!--都道府県選択-->
-            <table>
+            <table class="list-table">
                 <tr>
                     <th><%= f.label :都道府県選択 %></th>
                     <td><%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: ""} %></td></br>
@@ -32,37 +32,38 @@
         <% end %>
     
         <!--リスト一覧-->
-        <div class="headding">
-            <h2><i class="fas fa-list"></i>リスト一覧</h2>
-        </div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>チェック</th>
-                    <th></th>
-                    <th>都道府県</th>
-                    <th>ジャンル</th>
-                    <th>行きたい所</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @lists.each do |list| %>
+        <div class="table-wrap">
+            <div class="headding">
+                <h2><i class="fas fa-list"></i>リスト一覧</h2>
+            </div>
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <%= form_with model: list, local:true, method: :patch do |f| %>
-                            <td><%= f.check_box :check_box %></td>
-                            <td><%= f.submit '更新'%>
-                        <% end %>
-                        <td><%= list.prefecture.name %></td>
-                        <td><%= list.genre.name%></td>
-                        <td><%= list.spot_name %></td>
-                        <td><%= link_to "MAP", lists_map_path(list), class: "btn btn-danger" %></td>
-                        <td><%= link_to "削除する", list_path(list), class: "btn btn-danger" , method: :delete %></td>
+                        <th>チェック</th>
+                        <th></th>
+                        <th>都道府県</th>
+                        <th>ジャンル</th>
+                        <th>行きたい所</th>
+                        <th></th>
                     </tr>
-                <% end %>
-            </tbody>
-        </table>
-        
+                </thead>
+                <tbody>
+                    <% @lists.each do |list| %>
+                        <tr>
+                            <%= form_with model: list, local:true, method: :patch do |f| %>
+                                <td><%= f.check_box :check_box %></td>
+                                <td><%= f.submit '更新'%>
+                            <% end %>
+                            <td><%= list.prefecture.name %></td>
+                            <td><%= list.genre.name%></td>
+                            <td><%= list.spot_name %></td>
+                            <td><%= link_to "MAP", lists_map_path(list), class: "btn btn-danger" %></td>
+                            <td><%= link_to "削除する", list_path(list), class: "btn btn-danger" , method: :delete %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
         <div class="pagenation">
             <%= paginate @lists %>
         </div>

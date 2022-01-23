@@ -20,33 +20,37 @@
             <h4><i class="far fa-hand-point-down"></i><%= @record.title %></h4>
         </div>
         
-        <div class="thought">
-            <%=safe_join(@record.body.split("\n"),tag(:br))%>
-             <table class="info">
-                 <th><h5><i class="far fa-question-circle">Infomation</i></h5></th>
-                
-                <tr>
-                    <th>都道府県</th>
-                    <td><%= @record.prefecture.name %></td>
-                </tr>
-                <tr>
-                    <th>ジャンル</th>
-                    <td><%= @record.genre.name %></td>
-                </tr>
-
-                <tr>
-                    <th>予算</th>
-                    <td>¥<%= @record.price %></td>
-                </tr>
-                <tr>
-                    <th>住所</th>
-                    <td><%= @record.address %></td>
-                </tr>
-                <tr>
-                    <th>メンバー</th>
-                    <td><%= @record.member %></td>
-                </tr>
-            </table>
+        <div class= "row">
+             <div class="col-md-7 offset-md-0">
+                <%=safe_join(@record.body.split("\n"),tag(:br))%>
+            </div>
+             <div class="col-md-5 offset-md-0">
+                 <table class="info">
+                     <th><h5><i class="far fa-question-circle">Infomation</i></h5></th>
+                    
+                    <tr>
+                        <th>都道府県</th>
+                        <td><%= @record.prefecture.name %></td>
+                    </tr>
+                    <tr>
+                        <th>ジャンル</th>
+                        <td><%= @record.genre.name %></td>
+                    </tr>
+    
+                    <tr>
+                        <th>予算</th>
+                        <td>¥<%= @record.price %></td>
+                    </tr>
+                    <tr>
+                        <th>住所</th>
+                        <td><%= @record.address %></td>
+                    </tr>
+                    <tr>
+                        <th>メンバー</th>
+                        <td><%= @record.member %></td>
+                    </tr>
+                </table>
+            </div>
             <%= link_to "編集する", edit_record_path(@record), class: "btn btn-danger" %>
         </div>
         

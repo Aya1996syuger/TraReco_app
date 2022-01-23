@@ -432,7 +432,7 @@ body{
 
 .main-visual-content {
   width: 100%; 
-  height: px; /* 親の高さに揃える */
+  height: auto;
 
 }
 
@@ -523,5 +523,9 @@ h2 {
     width: 100%;
     heigh: 100%
     }
+    
+  .share_img img.image {
+      width: 100%;
   }
+}
 

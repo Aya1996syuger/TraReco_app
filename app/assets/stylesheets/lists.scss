@@ -12,3 +12,23 @@
   height: 400px;
   margin-left: 20%;
 }
+
+
+.list-table th{
+    width: 100px;
+    
+}
+
+.table-wrap {
+  overflow-x: scroll;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+.table th,
+.table td {
+  border: 2px solid #eee;
+  padding: 4px 8px;
+}

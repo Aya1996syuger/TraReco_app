@@ -6,8 +6,8 @@
    </div>
     
    <%= link_to "編集する",edit_customer_path(@customer), class:"btn btn-outline-success"%>
-   
-   <table class="table table-bordered">
+   <div class="table-wrap">
+    <table class="table table-bordered">
   
      <tr>
       <th>氏名</th>
@@ -28,6 +28,7 @@
       <td><%= @customer.gender %></td>
      </tr>
    </table>
+   </div>
   </div>
  </div>
 </div>
