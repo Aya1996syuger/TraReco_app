@@ -18,7 +18,6 @@ class ListsController < ApplicationController
             @genres= Genre.where(customer_id: current_customer.id)
             @lists= List.where(customer_id: current_customer.id).page(params[:page]).per(6)
             render :index
-            
         end
     end
     

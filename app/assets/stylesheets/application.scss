@@ -31,19 +31,24 @@
 /*============= CSS ===============*/
 header{
    width: 100%;
-  height: 130px;
-  margin-top: 0px;
+  height: 100px;
+
 }
 
-.welcome{
-  text-align: right;
-  font-family: 'arial unicode ms', sans-serif; 
+.navbar{
+  background-color: #4fd1c5;
+}
+
+
+.navitem{
+    font-family: 'arial unicode ms', sans-serif;
+    background-color: #4fd1c5;
+
 }
 
 body{
   width: 100%;
   height: 1560px;
- 
 }
 
 .main-visual-content {
@@ -64,16 +69,14 @@ footer {
   height: 130px; 
   text-align: center;
   padding: 50px 0;
-  background-color: #afeeee;
+  background-color: #4fd1c5;
 }
 .footer-text {
   color: #fff;
 }
 
 
-.navitem{
-    font-family: 'arial unicode ms', sans-serif; 
-}
+
 
 .text_font{
      font-family: 'arial unicode ms', sans-serif; 
@@ -95,10 +98,11 @@ img {
 }
 
 a {
-  color: #92badd;
+  color: #ffffff;
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
+  padding: 10px;
 }
 
 h2 {
@@ -108,6 +112,10 @@ h2 {
   text-transform: uppercase;
   display:inline-block;
   margin: 40px 8px 10px 8px; 
+}
+
+h6{
+  color: #000000;
 }
 
 .top-title {
@@ -475,7 +483,7 @@ footer {
   height: 130px; 
   text-align: center;
   padding: 50px 0;
-  background-color: #afeeee;
+  background-color: #4fd1c5;
 }
 .footer-text {
   color: #fff;
@@ -506,10 +514,12 @@ img {
 }
 
 a {
-  color: #92badd;
+  color: white;
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
+  padding: 10px;
+}
 }
 
 h2 {
@@ -534,7 +544,7 @@ h2 {
 }
 
 
-}
+
 
 /* タブレット縦置きサイズ（768px）以下の際に適用される設定 */
 @media screen and (max-width:768px) {

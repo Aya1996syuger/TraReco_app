@@ -20,7 +20,7 @@
                     <!--ジャンル選択ボックス-->
                 <tr>
                     <th><%= f.label :ジャンル選択 %></th>
-                    <td><%= f.collection_select(:genre_id, @genres, :id, :name, include_blank: "選択してください"),size:"10×10" %></td>
+                    <td><%= f.collection_select(:genre_id, @genres, :id, :name, include_blank: "選択してください") %></td>
                 </tr>
                     <!--行きたい所名称-->
                 <tr>
