@@ -128,11 +128,38 @@ h2 {
 
 /* STRUCTURE */
 
+
+/*==============ログイン画面==================*/
+.registration {
+  text-align: center;
+  margin-left: 20px;
+}
+
+
+
+input[type=date],input[type=email], input[type=password]{
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 5px;
+    width: 90%;
+    border: 2px solid #f6f6f6;
+    transition: all 0.5s ease-in-out;
+    border-radius: 5px 5px 5px 5px;
+}
+
+/*================================*/
+ 
 .wrapper {
   display: flex;
   align-items: center;
   flex-direction: column; 
-  justify-content: center;
+  // justify-content: center;
   width: 100%;
   min-height: 100%;
   padding: 10px;
@@ -145,7 +172,7 @@ h2 {
   padding: 30px;
   width: 90%;
   max-width: 700px;
-  position: relative;
+   position: relative;
   padding: 0px;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
@@ -207,7 +234,7 @@ input[type=text] {
   display: inline-block;
   font-size: 15px;
   margin: 5px;
-  width: 40%;
+  width: 90%;
   border: 2px solid #f6f6f6;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
