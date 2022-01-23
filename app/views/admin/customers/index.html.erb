@@ -21,12 +21,12 @@
                                 <% end %>
                             </td>
                             <td><%= customer.email %></td>
-                        
                     <% end %>
-                    
-                    
                 </tbody>
             </table>
+        </div>
+        <div class="pagenation">
+            <%= paginate @customers %>
         </div>
     </div>
 </div>
