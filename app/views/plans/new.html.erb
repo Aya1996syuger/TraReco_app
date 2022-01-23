@@ -1,3 +1,9 @@
+<% if @plan.errors.any? %>
+    <%= @plan.errors.count %>件のエラーが発生しました
+    <% @plan.errors.full_messages.each do |message| %>
+        <%= message %>
+    <% end %>
+<% end %>
 <div class="text_font">
 <h2><i class="fas fa-list"></i>旅行計画タイトル作成</h2>
 

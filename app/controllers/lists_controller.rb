@@ -12,9 +12,14 @@ class ListsController < ApplicationController
     def create
          @list = List.new(list_params)
          @list.customer_id = current_customer.id
-         @list.save
-         redirect_to lists_path
-         
+        if @list.save
+            redirect_to lists_path
+        else
+            @genres= Genre.where(customer_id: current_customer.id)
+            @lists= List.where(customer_id: current_customer.id).page(params[:page]).per(6)
+            render :index
+            
+        end
     end
     
     def update

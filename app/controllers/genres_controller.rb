@@ -10,9 +10,13 @@ class GenresController < ApplicationController
     def create
         @genre = Genre.new(genre_params)
         @genre.customer_id = current_customer.id
-        @genre.save
-        flash[:notice] = "登録が完了しました。"
-        redirect_to genres_path
+         if @genre.save
+            flash[:notice] = "登録が完了しました。"
+            redirect_to genres_path
+        else
+            @genres = Genre.where(customer_id: current_customer.id)
+            render:index
+        end
     end
     
     #ジャンル編集

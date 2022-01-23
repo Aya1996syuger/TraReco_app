@@ -1,4 +1,7 @@
 class PostFile < ApplicationRecord
     belongs_to :record
-  attachment :image
+    attachment :image
+  
+  
+  
 end

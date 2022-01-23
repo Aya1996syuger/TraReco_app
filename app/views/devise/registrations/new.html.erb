@@ -6,10 +6,10 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field">
-  <tr>
-  <th><%= f.label :名前 %></th>
-  <td><%= f.text_field :name, size: "10x30" %></td>
-  </tr>  
+    <tr>
+      <th><%= f.label :名前 %></th>
+      <td><%= f.text_field :name, size: "10x30" %></td>
+    </tr>  
   </div>
   <div class="field">
     <tr>
@@ -20,49 +20,46 @@
   
   <div class="field">
     <tr>
-    <th><%= f.label :出身地 %></th>
-    <td><%= f.text_field :birthplace %></td>
+      <th><%= f.label :出身地 %></th>
+      <td><%= f.text_field :birthplace %></td>
     </tr>
   </div>
-  <tr>
+  
   <div class="field">
-    <th><%= f.label :メールアドレス %></th>
-    <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
-  </tr>
-
+    <tr>
+      <th><%= f.label :メールアドレス %></th>
+      <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+    </tr>
   </div>
   
   <div class="gender-field">
     <tr>
-    <th><%= f.label :性別 %></th>
-    <td>
-      <%= f.label :man  %>
-      <%= f.radio_button :gender, :man %>
-      <%= f.label :woman  %>
-      <%= f.radio_button :gender, :woman %>
-    </td>
-    </tr>
-</div>
-
-  <div class="field">
-    <tr>
-    <th><%= f.label :パスワード %>
-      <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上)</em>
-    <% end %>
-    </th>
-    <td><%= f.password_field :password, autocomplete: "new-password" %></td>
+      <th><%= f.label :性別 %></th>
+      <td>
+        <%= f.label :man  %>
+        <%= f.radio_button :gender, :man %>
+        <%= f.label :woman  %>
+        <%= f.radio_button :gender, :woman %>
+      </td>
     </tr>
   </div>
 
-
+  <div class="field">
+    <tr>
+      <th><%= f.label :パスワード %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> 文字以上)</em>
+        <% end %>
+      </th>
+      <td><%= f.password_field :password, autocomplete: "new-password" %></td>
+    </tr>
+  </div>
   <div class="field">
     <tr>
     <th><%= f.label :パスワード確認用 %></th>
     <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
     </tr>
   </div>
-  
 </table>
   <div class="actions">
     <%= f.submit "登録" %>

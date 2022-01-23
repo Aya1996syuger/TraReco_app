@@ -22,4 +22,6 @@ class Prefecture < ActiveHash::Base
   has_many :lists,dependent: :destroy
   has_many :records,dependent: :destroy
   has_many :shares,dependent: :destroy
+  
+  
 end

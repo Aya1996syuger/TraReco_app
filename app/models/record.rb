@@ -9,6 +9,20 @@ class Record < ApplicationRecord
     accepts_attachments_for :post_files, attachment: :image
     
     
-  
+  #バリデーション
+    validates :prefecture, presence: true
+    validates :body, presence: true
+    validates :title, presence: true
+    validates :record_date, presence: true
+    validate :post_file_length
+   private
+   
+   def post_file_length
+        if post_files.length > 4
+            errors.add(:post_files, "は4枚以内にしてください")
+        end
+   end
+
+   
     
 end

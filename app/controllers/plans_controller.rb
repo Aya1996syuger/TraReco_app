@@ -6,10 +6,15 @@ class PlansController < ApplicationController
     def create
         @plan = Plan.new(plan_params)
         @plan.customer_id = current_customer.id
-        @plan.save
-        flash[:notice] = "登録が完了しました。"
-        redirect_to plans_path
-    end
+        if @plan.save
+          flash[:notice] = "登録が完了しました。"
+          redirect_to plans_path
+
+        else
+            
+            render :new
+        end
+end
     
     def index
         @plans = Plan.where(customer_id: current_customer.id).page(params[:page]).per(12)

@@ -8,5 +8,10 @@ class List < ApplicationRecord
  
  geocoded_by :address
  after_validation :geocode, if: :address_changed?
+ 
+ #バリデーション
+    validates :prefecture, presence: true
+    validates :spot_name, presence: true
+    validates :address, presence: true
 end
 

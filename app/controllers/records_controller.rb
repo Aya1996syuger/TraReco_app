@@ -14,6 +14,8 @@ class RecordsController < ApplicationController
             if @record.save
                 redirect_to records_path
             else
+                @genres = Genre.where(customer_id: current_customer.id)
+                @itineraries = Itinerary.where(customer_id: current_customer.id)
                 render :new
             end
     end
@@ -48,7 +50,7 @@ class RecordsController < ApplicationController
    
     private
       def record_params
-        params.require(:record).permit( :itinerary_id, :customer_id, :genre_id, :prefecture_id, :record_date, :title, :price, :address, :member,:evaluation, :body, post_files_images: [])
+        params.require(:record).permit( :itinerary_id, :customer_id, :genre_id, :prefecture_id, :record_date, :title, :price, :address, :member, :body, post_files_images: [])
       end
   
 end
