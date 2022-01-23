@@ -14,22 +14,22 @@
             <!--都道府県選択-->
             <table class="list-table">
                 <tr>
-                    <th><%= f.label :都道府県選択 %></th>
+                    <th><span class="badge badge-danger">必須</span><%= f.label :都道府県選択 %></th>
                     <td><%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: ""} %></td></br>
                 </tr>
                     <!--ジャンル選択ボックス-->
                 <tr>
-                    <th><%= f.label :ジャンル選択 %></th>
+                    <th><span class="badge badge-danger">必須</span><%= f.label :ジャンル選択 %></th>
                     <td><%= f.collection_select(:genre_id, @genres, :id, :name, include_blank: "選択してください") %></td>
                 </tr>
                     <!--行きたい所名称-->
                 <tr>
-                    <th><%= f.label :行きたい場所 %></th>
+                    <th><span class="badge badge-danger">必須</span><%= f.label :行きたい場所 %></th>
                     <td><%= f.text_field :spot_name ,placeholder: "東京スカイツリー" ,size: "80x80"%></td>
                 </tr>
                 <tr>
                     <!--行きたい所名称-->
-                    <th><%= f.label :住所 %></th>
+                    <th><span class="badge badge-danger">必須</span><%= f.label :住所 %></th>
                     <td><%= f.text_field :address ,placeholder: "東京都墨田区押上1-1-2",size: "80x80"%></td>
                 </tr>
             </table>

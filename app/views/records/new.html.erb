@@ -13,19 +13,19 @@
         <%= form_with model:@record, local:true do |f| %>
              <%= f.attachment_field :post_files_images, multiple: true %></br>
         
-            <%= f.label :タイトル%>
+            <%= f.label :タイトル%><span class="badge badge-danger">必須</span>
             <%= f.text_field :title %></br>
             
-            <%= f.label :日付%>
+            <%= f.label :日付%><span class="badge badge-danger">必須</span>
             <%= f.date_field :record_date %></br>
             
             <%= f.label :アルバム%>
             <%= f.collection_select(:itinerary_id, @itineraries, :id, :itinerary_name, include_blank: "選択しない",size: "20x20") %></p>
             
-            <%= f.label :都道府県選択 %>
+            <%= f.label :都道府県選択 %><span class="badge badge-danger">必須</span>
             <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "どこ？"} %></br>
             
-            <%= f.label :ジャンル%>
+            <%= f.label :ジャンル%><span class="badge badge-danger">必須</span>
             <%= f.collection_select(:genre_id, @genres, :id, :name, include_blank: "ジャンルは？",size: "20x20") %></p>
             
             
@@ -38,7 +38,7 @@
             <%= f.label :メンバー%>
             <%= f.text_field :member %></br>
             
-            <%= f.label :感想%></br>
+            <%= f.label :感想%></br><span class="badge badge-danger">必須</span>
             <%= f.text_area :body,size: "100x10" %></br>
             
             

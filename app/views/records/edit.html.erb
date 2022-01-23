@@ -1,4 +1,5 @@
 <div class = "text_font">
+ <div class="main">
 <h3><%= @record.title %>の編集</h3>
 
 <%= form_with model:@record,url:record_path(@record), local:true do |f| %>
@@ -65,4 +66,5 @@
 <% end %>
 
 <%= link_to "削除する", record_path(@record), class: "btn btn-danger" , method: :delete %></td>
+</div>
 </div>

@@ -1,60 +1,62 @@
 <div class="text_font">
-    <div class="map">
-        <div class="headding">
-          <h3><i class="fas fa-map-marked-alt"></i><%= @list.spot_name %></h3>
-        </div>
-
-        <h6>住所：<%= @list.address %></h6>
-        
-        <h2>map</h2>
-        
-        <div id='map'></div>
-        
-        <style>
-            #map{
-              height: 400px;
+    <div class="main">
+        <div class="map">
+            <div class="headding">
+              <h3><i class="fas fa-map-marked-alt"></i><%= @list.spot_name %></h3>
+            </div>
+    
+            <h6>住所：<%= @list.address %></h6>
+            
+            <h2>map</h2>
+            
+            <div id='map'></div>
+            
+            <style>
+                #map{
+                  height: 400px;
+                }
+            </style>
+            
+            <script type="text/javascript">
+                function initMap(){
+                    var test ={lat: <%= @list.latitude %>, lng: <%= @list.longitude %>};
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 15,
+                        center: test
+                    });
+              
+                    var transitLayer = new google.maps.TransitLayer();
+                        transitLayer.setMap(map);
+            
+                    var contentString = '住所：<%= @list.address %>';
+                    var infowindow = new google.maps.InfoWindow({
+                        content: contentString
+                    });
+            
+                    var marker = new google.maps.Marker({
+                        position:test,
+                        map: map,
+                        title: contentString
+                    });
+            
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
             }
-        </style>
-        
-        <script type="text/javascript">
-            function initMap(){
-                var test ={lat: <%= @list.latitude %>, lng: <%= @list.longitude %>};
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 15,
-                    center: test
-                });
-          
-                var transitLayer = new google.maps.TransitLayer();
-                    transitLayer.setMap(map);
-        
-                var contentString = '住所：<%= @list.address %>';
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                });
-        
-                var marker = new google.maps.Marker({
-                    position:test,
-                    map: map,
-                    title: contentString
-                });
-        
-                marker.addListener('click', function() {
-                    infowindow.open(map, marker);
-                });
-        }
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_Fol02NRVEbF5pn24e-Qggv3OACNE2AM&callback=initMap" async defer></script>
-        
-        <div class="map-info">
-            <table class="table table-bordered">
-                <tr>
-                <th>都道府県</th>
-                    <td><%= @list.prefecture.name %></td>
-                </tr>
-                <th>ジャンル</th>
-                    <td><%= @list.genre.name%></td>
-                </tr>
-            </table>
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_Fol02NRVEbF5pn24e-Qggv3OACNE2AM&callback=initMap" async defer></script>
+            
+            <div class="map-info">
+                <table class="table table-bordered">
+                    <tr>
+                    <th>都道府県</th>
+                        <td><%= @list.prefecture.name %></td>
+                    </tr>
+                    <th>ジャンル</th>
+                        <td><%= @list.genre.name%></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </div>

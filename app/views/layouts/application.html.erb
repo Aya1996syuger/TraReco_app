@@ -34,6 +34,7 @@
         <!--ナビゲーションバー-->
         <div class='fixed-top'>
           <nav>
+            
             <% if customer_signed_in? %>
               <div class="navitem">
                 <%= image_tag 'logo.jpg',size: "90x90"%>
@@ -66,28 +67,38 @@
                 
                 
               <% elsif admin_signed_in? %>
+              <div class="navitem">
+                <%= image_tag 'logo.jpg',size: "90x90"%>
+              
                 <button type="button" class="btn btn-default navbar-btn">
-                  <%= link_to "Home", root_path ,class: 'btn btn-outline-info'%>
+                  <%= link_to "Home", root_path %>
                 </button>
+                
                 <button type="button" class="btn btn-default navbar-btn">
-                  <%= link_to "Logout", destroy_admin_session_path, method: :delete,class: 'btn btn-outline-info' %>
+                  <%= link_to "Customer", admin_customers_path %>
+                </button>
+                
+                <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Logout", destroy_admin_session_path, method: :delete %>
                 </button>
                 
               
               <% else %>
+              
                 <div class="navitem">
+                <%= image_tag 'logo.jpg',size: "90x90"%>
                 <button type="button" class="btn btn-default navbar-btn">
-                  <%= link_to "Share", root_path,class: 'btn btn-outline-info' %>
+                  <%= link_to "Share", root_path %>
                 </button>
                 <button type="button" class="btn btn-default navbar-btn">
-                  <%= link_to "Signup" , new_customer_registration_path,class: 'btn btn-outline-info' %>
+                  <%= link_to "Signup" , new_customer_registration_path %>
                 </button>
                 <button type="button" class="btn btn-default navbar-btn">
-                  <%= link_to "Login", new_customer_session_path,class: 'btn btn-outline-info' %>
+                  <%= link_to "Login", new_customer_session_path %>
                 </button>
               <% end %>
             </div>
-           </nav>
+          </nav>
         </div>
   
   </header>

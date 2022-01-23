@@ -1,35 +1,37 @@
 <div class="text_font">
- <div class="mypage">
- <div class="headding">
-  <h2><i class="far fa-address-card"></i>会員情報</h2>
+ <div class="main">
+  <div class="mypage">
+   <div class="headding">
+    <h2><i class="far fa-address-card"></i>会員情報</h2>
+   </div>
+   <div class="table-wrap">
+    <table class="table table-bordered">
+     <tr>
+      <th>会員ID</th>
+      <td><%= @customer.id %></td>
+     </tr>
+     <tr>
+      <th>氏名</th>
+      <td><%= @customer.name %></td>
+     </tr>
+     <tr>
+      <th>性別</th>
+      <td><%= @customer.gender %></td>
+     </tr>
+     <tr>
+      <th>アドレス</th>
+      <td><%= @customer.email %></td>
+     </tr>
+     <tr>
+      <th>誕生日</th>
+      <td><%= @customer.birthday.strftime('%Y/%m/%d') %></td>
+     </tr>
+     <tr>
+      <th>出身地</th>
+      <td><%= @customer.birthplace %></td>
+     </tr>
+    </table>
+   </div>
+  </div>
  </div>
-  <table class="table table-bordered">
-   <tr>
-    <th>会員ID</th>
-    <td><%= @customer.id %></td>
-   </tr>
-   <tr>
-    <th>氏名</th>
-    <td><%= @customer.name %></td>
-   </tr>
-   <tr>
-    <th>性別</th>
-    <td><%= @customer.gender %></td>
-   </tr>
-   
-   <tr>
-    <th>アドレス</th>
-    <td><%= @customer.email %></td>
-   </tr>
-   <tr>
-    <th>誕生日</th>
-    <td><%= @customer.birthday %></td>
-   </tr>
-   <tr>
-    <th>出身地</th>
-    <td><%= @customer.birthplace %></td>
-   </tr>
-   
-  </table>
- 
 </div>

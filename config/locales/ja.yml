@@ -34,4 +34,12 @@ ja:
    attributes:
     genre:
         name: ジャンル名
+        
+ja:
+ activerecord:
+   attributes:
+    customer:
+     show:
+      man: 男性
+      woman: 女性 
        

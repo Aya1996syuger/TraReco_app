@@ -9,10 +9,10 @@
 
 
 <%= form_with model:@plan, local:true do |f| %>
- <%= f.label :タイトル %>
+ <%= f.label :タイトル %><span class="badge badge-danger">必須</span>
  <%= f.text_field :plan_title %></br>
  
- <%= f.label :日付%>
+ <%= f.label :日付%><span class="badge badge-danger">必須</span>
  <%= f.date_field :date %></br>
  
  
