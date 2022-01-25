@@ -24,11 +24,6 @@ ActiveRecord::Schema.define(version: 2022_01_20_115821) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "areas", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -84,17 +79,14 @@ ActiveRecord::Schema.define(version: 2022_01_20_115821) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start_time"
+    t.datetime "finish_time"
+    t.string "address"
   end
 
   create_table "post_files", force: :cascade do |t|
     t.integer "record_id", null: false
     t.string "image_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "prefectures", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
