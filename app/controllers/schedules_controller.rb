@@ -7,10 +7,13 @@ class SchedulesController < ApplicationController
     
     def create
         @schedule = Schedule.new(schedule_params)
-        @schedule.save
-        flash[:notice] = "登録が完了しました。"
-        redirect_to plan_schedules_path(@schedule.plan_id)
-        
+        if @schedule.save
+            flash[:notice] = "登録が完了しました。"
+            redirect_to plan_schedules_path(@schedule.plan_id)
+        else
+            @genres= Genre.where(customer_id: current_customer.id)
+            render:new
+        end
     end
     
     def index
@@ -34,7 +37,7 @@ class SchedulesController < ApplicationController
     def destroy
         @schedule = Schedule.find(params[:id])
         @schedule.destroy
-        redirect_to plans_path
+        redirect_to plan_schedules_path
     end
     
     

@@ -2,7 +2,7 @@
     <div class="main">
         <!--検索-->
         <%= search_form_for @q, url:shares_path do |f| %>
-            <i class="fas fa-search"><%= f.search_field :title_cont,placeholder: "旅行先...",size: "30x30" %></i>
+            <i class="fas fa-search"><%= f.search_field :title_cont,placeholder: "旅行先名を入力してください",size: "30x30" %></i>
             <%= f.submit "検索" ,class:"fas fa-search"%>
         <% end %>
         

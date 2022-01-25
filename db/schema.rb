@@ -118,12 +118,10 @@ ActiveRecord::Schema.define(version: 2022_01_20_115821) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.integer "itinerary_id"
     t.integer "customer_id"
     t.integer "plan_id"
     t.integer "genre_id"
     t.string "plan_title"
-    t.string "genre"
     t.string "budget"
     t.string "address"
     t.text "memo"
@@ -131,7 +129,6 @@ ActiveRecord::Schema.define(version: 2022_01_20_115821) do
     t.datetime "updated_at", null: false
     t.datetime "start_time"
     t.datetime "finish_time"
-    t.datetime "date"
   end
 
   create_table "shares", force: :cascade do |t|

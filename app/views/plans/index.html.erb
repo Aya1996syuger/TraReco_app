@@ -5,20 +5,20 @@
    <h2><i class="far fa-calendar-alt"></i>計画集</h2>
   </div>
   
- 
+  
   <%= link_to "PLAN作成",new_plan_path, class:"btn btn-success"%>
   
-  <table>
+  <table class="table table-borderless">
    <% @plans.each do |plan| %>
-    <tbody>
-     <td><%= plan.date.strftime('%Y/%m/%d') %></td>
-     <td><%= plan.plan_title %></td>
-     <div class="btn-group btn-group-xs">
-      <td><%= link_to "編集する",edit_plan_path(plan), class: "btn btn-primary"%></td>
-      <td><%= link_to "スケジュール表示",plan_schedules_path(plan),  method: :get ,class:"btn btn-primary"%></td>
-     </div>
-    </tbody>
-    <% end %>
-   </table>
-  </div>
+   <tbody>
+    <td><%= plan.date.strftime('%Y/%m/%d') %></td>
+    <td><%= plan.plan_title %></td>
+    <div class="btn-group btn-group-xs">
+     <td><%= link_to "編集する",edit_plan_path(plan), class: "btn btn-primary"%></td>
+     <td><%= link_to "スケジュール表示",plan_schedules_path(plan),  method: :get ,class:"btn btn-primary"%></td>
+    </div>
+   </tbody>
+   <% end %>
+  </table>
  </div>
+</div>
