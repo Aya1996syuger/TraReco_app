@@ -40,8 +40,10 @@ Tra Reco
 
 
 ## 設計書
-#ER図
+- ER図
 https://app.diagrams.net/#G12Wa48mTA2ra_mgDkfycbGN3xhWIFNOrB
+- アプリケーション定義書
+
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1W-_kzGehP9NcBr_hZcx0DFohG1PJbrbOzcrRbPUS3Og/edit?usp=sharing
