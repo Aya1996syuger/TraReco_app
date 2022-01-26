@@ -1,44 +1,42 @@
-# record作成バリデーション
-ja:
- activerecord:
-   attributes:
-    record:
-       post_files: 写真
-       genre: ジャンル
-       body: 感想
-       record_date: 訪問日
-       title: タイトル
-       prefecture: 都道府県
-
-# itinerary作成バリデーション
  ja:
- activerecord:
-   attributes:
-    list:
-       genre: ジャンル
-       prefecture: 都道府県
-       spot_name: 行きたい場所
-       address: 住所
-
-# plan作成バリデーション
- ja:
- activerecord:
-   attributes:
-    plan:
-       plan_title: タイトル
-       date: 日付
-
-# genre作成バリデーション
- ja:
- activerecord:
-   attributes:
-    genre:
+  activerecord:
+    models:
+      plan:
+      record:
+      list:
+      genre:
+      customer:
+    attributes:
+      plan:
+        plan_title: タイトル
+        date: 日付
+      record:
+        post_files: 写真
+        genre: ジャンル
+        body: 感想
+        record_date: 訪問日
+        title: タイトル
+        prefecture: 都道府県
+      list:
+        genre: ジャンル
+        prefecture: 都道府県
+        spot_name: 行きたい場所
+        address: 住所
+      genre:
         name: ジャンル名
-        
-ja:
- activerecord:
-   attributes:
-    customer:
-     show:
-      man: 男性
-      woman: 女性 
+
+
+
+
+
+
+
+
+
+# ja:
+#  activerecord:
+#    attributes:
+#     customer:
+#      show:
+#       man: 男性
+#       woman: 女性 

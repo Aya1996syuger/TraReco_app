@@ -3,7 +3,8 @@ class GenresController < ApplicationController
     #ジャンル一覧・作成
     def index
         @genre = Genre.new
-        @genres = Genre.where(customer_id: current_customer.id).page(params[:page]).per(15)
+        @genres = Genre.where(customer_id: current_customer.id).page(params[:page]).per(10)
+        
         
 
     end
@@ -11,11 +12,11 @@ class GenresController < ApplicationController
     def create
         @genre = Genre.new(genre_params)
         @genre.customer_id = current_customer.id
-         if @genre.save
+        if @genre.save
             flash[:notice] = "登録が完了しました。"
             redirect_to genres_path
         else
-            @genres = Genre.where(customer_id: current_customer.id)
+            @genres = Genre.where(customer_id: current_customer.id).page(params[:page]).per(10)
             render:index
         end
     end
