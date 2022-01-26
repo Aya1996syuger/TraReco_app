@@ -11,7 +11,7 @@
     <div class="headding">
      <h2>ジャンル</h2>
     </div>
-    <%= f.text_field :name %>
+    <%= f.text_field :name,placeholder: "観光地、お寺..." %>
     <%= f.submit '新規登録', class: 'btn btn-success' %>
   <% end %>
   
@@ -38,6 +38,9 @@
        <% end %>
       </tbody>
     </table>
+   </div>
+   <div class="pagenation">
+   <%= paginate @genres %>
    </div>
   </div>
 </div>

@@ -11,10 +11,13 @@
         </div>
         <!-- 記録作成 -->
         <%= form_with model:@record, local:true do |f| %>
+            
              <%= f.attachment_field :post_files_images, multiple: true %></br>
+             <%= f.label :※３枚まで選択可能です%></br>
         
             <%= f.label :タイトル%><span class="badge badge-danger">必須</span>
-            <%= f.text_field :title %></br>
+            <%= f.text_field :title,placeholder: "東京タワー" %></br>
+            
             
             <%= f.label :日付%><span class="badge badge-danger">必須</span>
             <%= f.date_field :record_date %></br>

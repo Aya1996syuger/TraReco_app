@@ -40,7 +40,8 @@ Tra Reco
 
 
 ## 設計書
-後日
+#ER図
+https://app.diagrams.net/#G12Wa48mTA2ra_mgDkfycbGN3xhWIFNOrB
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1W-_kzGehP9NcBr_hZcx0DFohG1PJbrbOzcrRbPUS3Og/edit?usp=sharing
@@ -53,4 +54,12 @@ https://docs.google.com/spreadsheets/d/1W-_kzGehP9NcBr_hZcx0DFohG1PJbrbOzcrRbPUS
 - IDE：Cloud9
 
 ## 使用素材
-「使用検討中」
+- fontawesome（アイコン）
+　https://fontawesome.com/
+- google map（マップ）
+- Unsplash(画像)
+　https://unsplash.com/
+- ファビコン
+  https://ao-system.net/alphaicon/
+- ロゴ
+　https://www.designevo.com/

@@ -3,7 +3,8 @@ class GenresController < ApplicationController
     #ジャンル一覧・作成
     def index
         @genre = Genre.new
-        @genres = Genre.where(customer_id: current_customer.id)
+        @genres = Genre.where(customer_id: current_customer.id).page(params[:page]).per(15)
+        
 
     end
     
