@@ -7,14 +7,20 @@
 <table class="table table-borderless">
  <tr>
   <th>
+   <label for="name">写真</label>
+  </th>
+  <td>
+   <%= f.attachment_field :post_files_images, multiple: true %></br>
+  </td>
+ </tr>
+ <tr>
+  <th>
    <label for="name">タイトル</label>
-   <label for="name"></label>
   </th>
   <td>
    <%= f.text_field :title %>
   </td>
  </tr>
- 
  <tr>
   <th>
    <label for="birthplace">ジャンル</label></br>

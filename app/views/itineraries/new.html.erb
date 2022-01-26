@@ -1,3 +1,9 @@
+<% if @itinerary.errors.any? %>
+    <%= @itinerary.errors.count %>件のエラーが発生しました
+    <% @itinerary.errors.full_messages.each do |message| %>
+        <%= message %>
+    <% end %>
+<% end %>
 <div class = "text_font">
     <div class="main">
         <div class="record_title">

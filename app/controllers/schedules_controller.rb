@@ -29,8 +29,12 @@ class SchedulesController < ApplicationController
     #プランアップデート
     def update
         schedule = Schedule.find(params[:id])
-        schedule.update(schedule_params)
-        redirect_to plan_schedules_path
+        if schedule.update(schedule_params)
+           redirect_to plan_schedules_path
+        else
+            render :new 
+            @genres= Genre.where(customer_id: current_customer.id)
+        end
     end
     
     #プラン削除

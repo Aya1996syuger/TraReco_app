@@ -9,9 +9,12 @@ class ItinerariesController < ApplicationController
     def create
         @itinerary = Itinerary.new(itinerary_params)
         @itinerary.customer_id = current_customer.id
-        @itinerary.save
-        flash[:notice] = "登録が完了しました。"
-        redirect_to itineraries_path
+        if @itinerary.save
+            flash[:notice] = "登録が完了しました。"
+            redirect_to itineraries_path
+        else
+            render :new
+        end
     end
     
     def index

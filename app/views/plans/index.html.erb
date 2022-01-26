@@ -11,8 +11,8 @@
   <table class="table table-borderless">
    <% @plans.each do |plan| %>
    <tbody>
-    <td><%= plan.date.strftime('%Y/%m/%d') %></td>
-    <td><%= plan.plan_title %></td>
+     <td><%= plan.date.strftime('%Y/%m/%d') %></td>
+     <td><%= plan.plan_title %></td>
     <div class="btn-group btn-group-xs">
      <td><%= link_to "編集する",edit_plan_path(plan), class: "btn btn-primary"%></td>
      <td><%= link_to "スケジュール表示",plan_schedules_path(plan),  method: :get ,class:"btn btn-primary"%></td>

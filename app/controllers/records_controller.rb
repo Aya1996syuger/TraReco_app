@@ -43,7 +43,8 @@ class RecordsController < ApplicationController
     def update
     @record = Record.find(params[:id])
     @record.update(record_params)
-    redirect_to records_path
+    redirect_to record_path(@record)
+    
     end
    
    

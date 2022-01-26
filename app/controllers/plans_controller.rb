@@ -14,7 +14,7 @@ class PlansController < ApplicationController
             
             render :new
         end
-end
+    end
     
     def index
         @plans = Plan.where(customer_id: current_customer.id).page(params[:page]).per(12)
