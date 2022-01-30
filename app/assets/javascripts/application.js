@@ -32,24 +32,5 @@
 // });
 
 /*global $*/
-$(function() {
-    $('#slider').vegas({
-        transition: 'fade2',
-        transitionDuration: 2000,
-        delay: 5000,
-        animationDuration: 20000,
-        animation: 'random',
-        slides: [
-                { src: '/assets/top.jpg'},
-                { src: '/assets/top2.jpg'},
-                { src: '/assets/top3.jpg'},
-                { src: '/assets/top4.jpg'}
-            ]
-    });
-    
-    // $('.hoge').slick({
-    //     dots: true,
-    // });
-});
 
   

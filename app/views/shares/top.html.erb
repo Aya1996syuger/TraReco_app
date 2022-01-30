@@ -35,3 +35,24 @@
     
     </main>
 </div>
+<script>
+$(function() {
+    $('#slider').vegas({
+        transition: 'fade2',
+        transitionDuration: 2000,
+        delay: 5000,
+        animationDuration: 20000,
+        animation: 'random',
+        slides: [
+                { src: "<%= asset_path 'top.jpg' %>"},
+                { src: "<%= asset_path 'top2.jpg' %>"},
+                { src: "<%= asset_path 'top3.jpg' %>"},
+                { src: "<%= asset_path 'top4.jpg' %>"}
+            ]
+    });
+    
+    // $('.hoge').slick({
+    //     dots: true,
+    // });
+});
+</script>
