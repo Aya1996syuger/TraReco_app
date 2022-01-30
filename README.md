@@ -46,6 +46,8 @@ Tra Reco
 　https://app.diagrams.net/#G12Wa48mTA2ra_mgDkfycbGN3xhWIFNOrB
 - アプリケーション定義書
 　https://docs.google.com/spreadsheets/d/175l_UrKgkICctiIi6TTOcqBdS4Am5oIh/edit#gid=549108681
+- テーブル定義書
+　https://docs.google.com/spreadsheets/d/1NA6rX4YSCxN4HK0RTwughoyQljYnRXX0MIP3F-QO4Sk/edit#gid=1243549839
 
 
 
